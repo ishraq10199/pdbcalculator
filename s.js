@@ -79,13 +79,15 @@ function calculate(kwh) {
   }
 
   document.getElementById("output_1").innerHTML =
-    "Your monthly KWh charge is: BDT " + price.toFixed(2);
+    "Your monthly KWh charge is: BDT " + parseFloat(price).toFixed(2);
   document.getElementById("output_2").innerHTML =
-    "Demand charge: BDT " + demand_charge.toFixed(2);
+    "Demand charge: BDT " + parseFloat(demand_charge).toFixed(2);
   document.getElementById("output_3").innerHTML =
-    "VAT: BDT " + ((price + demand_charge) * vat).toFixed(2);
+    "VAT: BDT " + parseFloat((price + demand_charge) * vat).toFixed(2);
   document.getElementById("output_4").innerHTML =
     "Your payable dues: <b>BDT " +
-    (price + demand_charge + (price + demand_charge) * vat).toFixed(2) +
+    parseFloat(price + demand_charge + (price + demand_charge) * vat).toFixed(
+      2
+    ) +
     "</BDT>";
 }
